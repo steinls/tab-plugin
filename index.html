@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<style>
-		*{
+		body,html{
 			margin:0;
 			padding: 0;
 		}
@@ -13,28 +13,86 @@
 			font-size:12px;
 			font-family:'微软雅黑';
 			padding: 100px;
+			padding-top: 120px;
 		}
-		ul,li{
-			list-style: none;
+		.kk{
+			width: 30%;
+			float: left;
+			margin: 20px;
 		}
-
+		.kk p{
+			color: #fff;
+			font-size:16px;
+		}
 	</style>
-	<link rel="stylesheet" href="tab.css">
+	<link rel="stylesheet" href="./css/tab.css">
 </head>
 <body>
-	<div class="tab">
-		<ul class="tab-nav">
-			<li class="actived"><a href="#">新闻</a></li>
-			<li><a href="#">娱乐</a></li>
-			<li><a href="#">电影</a></li>
-			<li><a href="#">科技</a></li>
-		</ul>
-		<div class="content-wrap">
-			<div class="content-item current"><img src="image/a.jpg" alt=""></div>
-			<div class="content-item"><img src="image/b.jpg" alt=""></div>
-			<div class="content-item"><img src="image/c.jpg" alt=""></div>
-			<div class="content-item"><img src="image/d.jpg" alt=""></div>
+	<div class="kk">
+		<p>不设置参数</p>
+		<div class="js-tab tab" >
+			<ul class="tab-nav">
+				<li><a href="#">新闻</a></li>
+				<li><a href="#">娱乐</a></li>
+				<li><a href="#">电影</a></li>
+				<li><a href="#">科技</a></li>
+			</ul>
+			<div class="content-wrap">
+				<div class="content-item"><img src="image/a.jpg" alt=""></div>
+				<div class="content-item"><img src="image/b.jpg" alt=""></div>
+				<div class="content-item"><img src="image/c.jpg" alt=""></div>
+				<div class="content-item"><img src="image/d.jpg" alt=""></div>
+			</div>
 		</div>
 	</div>
+	
+
+	<div class="kk">
+		<p>触发事件为click,切换效果为fade,自动播放</p>
+		<div class="js-tab tab" data-config='{
+					"triggerType":"click",
+					"effect":"fade",
+					"auto":2000			
+				}'>
+			<ul class="tab-nav">
+				<li><a href="#">好莱坞</a></li>
+				<li><a href="#">会员专区</a></li>
+				<li><a href="#">付费</a></li>
+			</ul>
+			<div class="content-wrap">
+				<div class="content-item"><img src="image/a.jpg" alt=""></div>
+				<div class="content-item"><img src="image/b.jpg" alt=""></div>
+				<div class="content-item"><img src="image/c.jpg" alt=""></div>
+				<div class="content-item"><img src="image/d.jpg" alt=""></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="kk">
+		<p>设置首次第2个</p>
+		<div class="js-tab tab" data-config='{
+					"invoke":3
+				}'>
+			<ul class="tab-nav">
+				<li><a href="#">今日头条</a></li>
+				<li><a href="#">视频</a></li>
+				<li><a href="#">图片</a></li>
+			</ul>
+			<div class="content-wrap">
+				<div class="content-item"><img src="image/a.jpg" alt=""></div>
+				<div class="content-item"><img src="image/b.jpg" alt=""></div>
+				<div class="content-item"><img src="image/c.jpg" alt=""></div>
+				<div class="content-item"><img src="image/d.jpg" alt=""></div>
+			</div>
+		</div>
+	</div>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/tab.js"></script>
+	<script>
+		$(function(){
+			// var tab1 = new Tab($('.js-tab')[0]);
+			$('.js-tab').tab();
+		});
+	</script>
 </body>
 </html>

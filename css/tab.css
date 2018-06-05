@@ -1,10 +1,17 @@
 .tab{
+	/*margin:5px;*/
 	width: 300px;
 }
 .tab .tab-nav{
+	overflow: auto;
 	height: 30px;
+	list-style: none;
+	margin:0;
+	padding: 0;
 }
 .tab .tab-nav li{
+	margin:0;
+	padding: 0;
 	float: left;
 	margin-right: 5px;
 	border-radius:4px 4px 0 0;
@@ -28,9 +35,16 @@
 	height: 200px;
 	background: #fff;
 	padding: 5px;
+	position: relative;
 }
 .tab .content-wrap .content-item{
-	height: 200px; display: none;
+	height: 200px; 
+	display: none;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	right:5px;
+	bottom:5px;
 }
 .tab .content-wrap .content-item.current{
 	display: block;
